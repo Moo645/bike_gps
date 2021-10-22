@@ -1,0 +1,9 @@
+<hr>
+
+bike name: <%= this_bike.name %><br/>
+<% @gps.each do |f| %>
+  [
+  <%= f.lat %>, 
+  <%= f.lon %>
+  ] <br/>
+<% end %>

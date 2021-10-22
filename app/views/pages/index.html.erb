@@ -1,0 +1,22 @@
+root page
+<hr>
+<%= link_to "Add a new bike", new_bike_path %>
+<hr>
+
+<% console %>
+
+The bikes list:
+
+<% @bike.each do |f| %>
+  <br/>
+  <%= f.name %> |
+  Gps_records: <%= f.gps_records.size if f.gps_records.last %> |
+
+  Last record:[
+  <%= f.gps_records.last.lat if f.gps_records.last %>,
+  <%= f.gps_records.last.lon if f.gps_records.last %>
+  ]
+  <%= link_to 'Checkout all records', bike_gps_records_path(f) %> |
+  <%= link_to 'Add GPS record', new_bike_gps_record_path(f) %> |
+  <%= link_to 'DESTROY this awesome bike', bike_path(f), method: 'delete' %> |
+<% end %>

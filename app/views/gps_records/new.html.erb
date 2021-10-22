@@ -1,0 +1,11 @@
+Add GPS Record
+
+<%= form_for [:bike, @gps_record] do |f| %>
+  <%= f.label :lat, "lat" %>
+  <%=  f.text_field :lat %><br/>
+  <%= f.label :lon, "lon" %>
+  <%= f.text_field :lon %><br/>
+  <%= f.submit "Add GPS record" %>
+  
+<% end %>
+<% console %>
